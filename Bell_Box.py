@@ -1,6 +1,6 @@
 #Ian Bell
 
-#approcimate surrounding box in 3n/2 comparison
+#approximate surrounding box in 3n/2 comparison
 import random
 import math
 
