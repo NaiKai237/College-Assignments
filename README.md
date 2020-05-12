@@ -1,7 +1,6 @@
-# College-Assignments
-Code From CU CS classes
+# Ian Bell code examples
 
-Current Collection of Coding assignments that I have used for my Computer Science Classes at CU Boulder.
+Current Collection of programs that I feel show my skills and knowledge. Most of the code was submitted to CU for computer science classes.
 
 Bell_Box: The assignment was to code a program that finds the smallest rectangle that bounds a set of points.
 
