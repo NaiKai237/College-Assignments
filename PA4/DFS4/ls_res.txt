@@ -1,0 +1,5 @@
+foobar.html.1
+foobar.html.2
+foo.txt.1
+foo.txt.2
+ls_res.txt
