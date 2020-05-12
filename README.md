@@ -2,6 +2,9 @@
 
 Current Collection of programs that I feel show my skills and knowledge. Most of the code was submitted to CU for computer science classes.
 
+Webserver: Uses socket I/O to to perform get requests for webpages found in "/www", specifically the index homepage and its resources. 
+
+
 Bell_Box: Creates the smallest possible bounding box for a set of points.
 
 Bell_DynamicPandaPeril: Program demonstrates dynamic vs greedy approaches to programming. 
