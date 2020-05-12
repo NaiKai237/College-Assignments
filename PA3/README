@@ -1,0 +1,38 @@
+Ian Bell
+PA3
+
+iabe3069_proxy.c is the source code for my proxy program. 
+
+To compile the code run the "make" command. 
+	-Make will compile the code into the executable program, as well as ensuring the cache directory exists. 
+
+To run the program perform "./webproxy <portnum> <ttl>"
+	For the program to run you must include a portnumber, if no ttl is specified the program uses a deafult of 60 seconds.
+
+You can also use "make run" to compile and run the program on port 8080
+
+Make clean will remove the executable as well as the cache directory. 
+
+Within the program directory is a file called "blacklist.txt".
+	This file contains the list of blacklisted websites for the proxy to compare to.
+	To add another website to the blacklist simply add a new line and write the name or ip addr of the site to blacklist
+
+
+
+
+The progam starts by initializing variable and socket information. Binding a socket to our addresss and requested port. It then loops indeffinitly, listening for connections each loop. Whenever a new connection is established the program forks a new child process and then continues listening for more connections. 
+
+The child process then recieves a request from the client, and interperates what the request means. First it checks for the GET method (only method we accept in this proxy). Then it pulls the URL from the request and checks if it is a valid request. First it checks if there is a webserver for the requested page. If not the proxy sends back a 400 bad request message. This interpretation of the request is done using different string functions in c, noteably strtok(), strcat() and strcmp(). 
+
+The program then compares the requested URL with our blacklist. 
+This is done by opening the blacklist file, taking each line of the file, finding all possible ip address for it, and comparing that with the possible ip addressess for the requested webpage. If the requested page is blacklisted the proxy responds with a "403 Forbidden response".
+
+Next the program checks if the requested page is in the cache. To do this the program generates a hash from the URL and finds the item in the cache array that corresponds, and checks if the saved page is still within the TTL. The cache array itself is an array of "struct tm" variables that holds the time that the file was saved to the cache. The program adds up the current hour, min and second and subtracts it from the hour,min,second that the file was saved. If the difference is greater than the TTL then the saved file isn't valid.
+
+If check_cache comes back valid, the program opens the corresponding file(based on the hash value of the url), copies the file contents to a string buffer and sends that buffer to the client. 
+
+If the file is not in the cache, or it is invalid then the program has to retrieve the webpage from the appropriate server. This is done is the easy_curl lib, placing a curl request on the URL requested from the client. The easyCurl function write the response to a file. The proxy then reads that file's content into a buffer, sends it to the client, and then saves it locally in the cache.
+
+To save a webpage into the cache, the proxy populates an tm struct array with the current time information retrieved from gmtime(). The actual webpage content is saved to a file with the same name as the hash generated from the URL(which is also the index of the webpage in the cache array). 
+
+For the cache to work the way I implimented it, the array was declared using mmap(), which shares the array's memory with all child processes, otherwise the array would never update.
