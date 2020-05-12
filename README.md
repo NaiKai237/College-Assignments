@@ -3,11 +3,11 @@
 Current Collection of programs that I feel show my programing skills and knowledge. 
 Most of the code was submitted to CU for computer science classes.
 
-Webserver: Uses socket I/O to to perform get requests for webpages found in "/www", specifically the index homepage and its resources. (The webpage and other resources in "/www" were not created by me)
+Distributed_File_System: Client and server programs that run a distributed file system. Users can add and pull files from the 4 servers which each hold 2 pieces of anygiven file. This allows for 2 servers to file before files become un-available to users.  
 
 Webproxy: Using socket I/O the proxy handles concurent requests for webpages, caches locally, and checks requests against a blacklist. 
 
-Distributed_File_System: Client and server programs that run a distributed file system. Users can add and pull files from the 4 servers which each hold 2 pieces of anygiven file. This allows for 2 servers to file before files become un-available to users.  
+Webserver: Uses socket I/O to to perform get requests for webpages found in "/www", specifically the index homepage and its resources. (The webpage and other resources in "/www" were not created by me)
 
 Bell_Box: Creates the smallest possible bounding box for a set of points.
 
