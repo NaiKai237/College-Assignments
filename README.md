@@ -5,6 +5,7 @@ Most of the code was submitted to CU for computer science classes.
 
 Webserver: Uses socket I/O to to perform get requests for webpages found in "/www", specifically the index homepage and its resources. 
 
+Webproxy: Using socket I/O the proxy handles concurent requests for webpages, caches locally, and checks requests against a blacklist. 
 
 Bell_Box: Creates the smallest possible bounding box for a set of points.
 
