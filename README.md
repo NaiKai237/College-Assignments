@@ -3,7 +3,7 @@
 Current Collection of programs that I feel show my programing skills and knowledge. 
 Most of the code was submitted to CU for computer science classes.
 
-Webserver: Uses socket I/O to to perform get requests for webpages found in "/www", specifically the index homepage and its resources. 
+Webserver: Uses socket I/O to to perform get requests for webpages found in "/www", specifically the index homepage and its resources. (The webpage and other resources in "/www" were not created by me)
 
 Webproxy: Using socket I/O the proxy handles concurent requests for webpages, caches locally, and checks requests against a blacklist. 
 
