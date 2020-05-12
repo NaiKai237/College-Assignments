@@ -7,6 +7,8 @@ Webserver: Uses socket I/O to to perform get requests for webpages found in "/ww
 
 Webproxy: Using socket I/O the proxy handles concurent requests for webpages, caches locally, and checks requests against a blacklist. 
 
+Distribusted_File_System: Client and server programs that run a distributed file system. Users can add and pull files from the 4 servers which each hold 2 pieces of anygiven file. This allows for 2 servers to file before files become un-available to users.  
+
 Bell_Box: Creates the smallest possible bounding box for a set of points.
 
 Bell_DynamicPandaPeril: Program demonstrates dynamic vs greedy approaches to programming. 
